@@ -41,3 +41,7 @@ All commands are run from the root of the project, from a terminal:
 ## 👀 Want to learn more?
 
 Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+
+## Acknowledgements
+
+Special thanks to , [/r/EngineeringResumes](https://www.reddit.com/r/EngineeringResumes/wiki/index/) for the content, [Quackit Tailwind CSS Documentation Layout ](https://www.quackit.com/html/html_editors/scratchpad/preview.cfm?example=/tailwind/v4/examples/layouts/tailwind_css_4_documentation_layout), for providing the document layout, [Shadcn/UI Typography](https://ui.shadcn.com/docs/components/radix/typography) for providing the type guidelines

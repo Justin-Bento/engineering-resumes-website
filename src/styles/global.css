@@ -5,3 +5,9 @@
     vertical-align: baseline;
   }
 }
+@layer components {
+  .sidebar-links {
+    /* Use @apply to tell Tailwind which styles to grab */
+    @apply block first-of-type:mt-3 text-sm/7 text-black/60  transition-colors;
+  }
+}
