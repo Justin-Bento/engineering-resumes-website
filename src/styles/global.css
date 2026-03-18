@@ -23,4 +23,7 @@
     /* Use @apply to tell Tailwind which styles to grab */
     @apply block first-of-type:mt-3 text-sm/7 text-black/60  transition-colors;
   }
+  main {
+    @apply w-11/12 mx-auto max-w-7xl min-h-dvh mt-24;
+  }
 }
