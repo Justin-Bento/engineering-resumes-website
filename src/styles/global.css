@@ -1,5 +1,18 @@
 @import "tailwindcss";
 
+@theme {
+  --color-*: initial;
+  --color-white: #f8f9fa; /* gray 0 from open-color */
+  --color-black: #212529; /* gray 9 from open-color */
+  --color-gray-1: #f1f3f5;
+  --color-gray-2: #e9ecef;
+  --color-gray-3: #dee2e6;
+  --color-gray-4: #ced4da;
+  --color-gray-5: #adb5bd;
+  --color-gray-6: #868e96;
+  --color-gray-7: #495057;
+  --color-gray-8: #343a40;
+}
 @layer base {
   * {
     vertical-align: baseline;
