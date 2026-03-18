@@ -4,47 +4,49 @@ const title = "Home";
 ---
 
 <BaseLayout pageTitle={title}>
-  <section class="">
-    <span class="flex flex-col-reverse">
-      <h1 class="text-4xl/16 font-semibold capitalize">
-        Build a Resume That Actually Works!
-      </h1>
-      <p class="text-sm">Welcome to r/EngineeringResumes!</p>
-    </span>
-    <p class="text-lg/8 max-w-3xl text-balance">
-      Follow the gold-standard engineering rules to pass the robots (ATS) and
-      impress hiring managers. A minimal, ATS-friendly template using
-      r/EngineeringResumes wiki.
-    </p>
-    <div class="flex items-center gap-4 mt-10">
-      <a
-        href="/wiki"
-        class="text-sm/11 font-semibold capitalize rounded bg-black text-white px-4 hover:bg-black/80 py-0 transition-colors hover:underline"
-      >
-        Read the Wiki
-      </a>
+  <main class="w-11/12 mx-auto max-w-7xl min-h-dvh">
+    <section class="">
+      <span class="flex flex-col-reverse">
+        <h1 class="text-4xl/16 font-semibold capitalize">
+          Build a Resume That Actually Works!
+        </h1>
+        <p class="text-sm">Welcome to r/EngineeringResumes!</p>
+      </span>
+      <p class="text-lg/8 max-w-3xl text-balance">
+        Follow the gold-standard engineering rules to pass the robots (ATS) and
+        impress hiring managers. A minimal, ATS-friendly template using
+        r/EngineeringResumes wiki.
+      </p>
+      <div class="flex items-center gap-4 mt-10">
+        <a
+          href="/wiki"
+          class="text-sm/11 font-semibold capitalize rounded bg-black text-white px-4 hover:bg-black/80 py-0 transition-colors hover:underline"
+        >
+          Read the Wiki
+        </a>
 
-      <a
-        href="/checklist"
-        class="text-sm/11 font-semibold capitalize rounded bg-black/10 text-black px-4 hover:bg-black/15 py-0 transition-colors hover:underline"
-      >
-        Use the Checklist
-      </a>
-    </div>
-  </section>
-  <section
-    class="mt-32 max-w-3xl [&>p]:text-base/7 text-balance [&>p]:not-first-of-type:mt-6"
-  >
-    <p>
-      This subreddit is dedicated to helping engineering students and
-      professionals create and improve their resumes. Please note that the
-      guidelines provided in this wiki predominantly align with the standards of
-      resumes in the United States and Canada.
-    </p>
-    <p class="italic !:text-sm">
-      <b>Disclaimer:</b>&nbsp;There are no clear-cut rules when it comes to
-      writing resumes, and this wiki serves as a resource offering general
-      suggestions and guidelines rather than definitive rules.
-    </p>
-  </section>
+        <a
+          href="/checklist"
+          class="text-sm/11 font-semibold capitalize rounded bg-black/10 text-black px-4 hover:bg-black/15 py-0 transition-colors hover:underline"
+        >
+          Use the Checklist
+        </a>
+      </div>
+    </section>
+    <section
+      class="mt-32 max-w-3xl [&>p]:text-base/7 text-balance [&>p]:not-first-of-type:mt-6"
+    >
+      <p>
+        This subreddit is dedicated to helping engineering students and
+        professionals create and improve their resumes. Please note that the
+        guidelines provided in this wiki predominantly align with the standards
+        of resumes in the United States and Canada.
+      </p>
+      <p class="italic !:text-sm">
+        <b>Disclaimer:</b>&nbsp;There are no clear-cut rules when it comes to
+        writing resumes, and this wiki serves as a resource offering general
+        suggestions and guidelines rather than definitive rules.
+      </p>
+    </section>
+  </main>
 </BaseLayout>

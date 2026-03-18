@@ -4,7 +4,7 @@ const title = "Wiki";
 ---
 
 <BaseLayout pageTitle={title}>
-  <div class="flex flex-1">
+  <main class="w-11/12 mx-auto max-w-7xl min-h-dvh flex flex-1">
     <!-- Left Sidebar (Navigation) -->
     <aside
       class="shrink-0 border-r border-gray-100 hidden lg:block h-[calc(100vh-4rem)] sticky top-16 overflow-y-auto px-8 pb-12 scrollbar-hide"
@@ -30,7 +30,7 @@ const title = "Wiki";
     </aside>
 
     <!-- Main Content Area -->
-    <main class="flex-1 px-8 pb-16 max-w-[80ch]">
+    <article class="flex-1 px-8 pb-16 max-w-[80ch]">
       <div class="space-y-12">
         <header class="space-y-4">
           <span class="text-xs font-mono uppercase tracking-widest font-bold"
@@ -117,7 +117,7 @@ const title = "Wiki";
           </a>
         </divWelcome>
       </div>
-    </main>
+    </article>
 
     <!-- Right Sidebar (On this page) -->
     <aside
@@ -146,5 +146,5 @@ const title = "Wiki";
         >
       </nav>
     </aside>
-  </div>
+  </main>
 </BaseLayout>
