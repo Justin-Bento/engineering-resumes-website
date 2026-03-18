@@ -22,7 +22,9 @@ const title = "Wiki";
       >
         {entry.data.title}
       </h1>
-      <div class="max-w-3xl text-base/7 space-y-4 mt-6 [&>p>a]:underline">
+      <div
+        class="max-w-3xl text-base/7 space-y-4 mt-6 [&>ol]:list-decimal [&>p>a]:underline"
+      >
         <Content />
       </div>
     </section>
