@@ -1,32 +1,35 @@
 ---
+import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import { getEntry, render } from "astro:content";
 
-const entry = await getEntry("wiki", "post-1");
-
-if (!entry) {
-  // Handle Error, for example:
-  throw new Error("Could not find blog post 1");
-}
-
-const { Content } = await render(entry);
-
-const title = "Wiki";
+const allPosts = await getCollection("wiki");
 ---
 
-<BaseLayout pageTitle={title}>
-  <main class="w-11/12 mx-auto max-w-7xl min-h-dvh flex flex-1">
-    <section class="">
-      <h1
-        class="scroll-m-20 text-3xl font-extrabold tracking-tight text-balance"
-      >
-        {entry.data.title}
-      </h1>
-      <div
-        class="max-w-3xl text-base/7 space-y-4 mt-6 [&>ol]:list-decimal [&>p>a]:underline"
-      >
-        <Content />
-      </div>
+<BaseLayout pageTitle="Wiki Index">
+  <main class="w-11/12 mx-auto max-w-7xl">
+    <section class="max-w-3xl">
+      <h1 class="text-3xl font-bold">All Wiki Posts</h1>
+      <p class="text-base/7 max-w-3xl mt-3">
+        This path takes you through our entire curriculum. The courses should be
+        taken in the order that they are displayed. You'll learn everything you
+        need to know to create beautiful resumes that follow the gold-standard
+        engineering rules to pass the robots (ATS) and impress hiring managers .
+      </p>
     </section>
+    <ul class="mt-8 space-y-4">
+      {
+        allPosts.map((post) => (
+          <li class="isolate relative py-4 px-6 rounded overflow-hidden">
+            <a
+              href={`/wiki/${post.id}`}
+              class="text-lg/7 font-semibold hover:underline"
+            >
+              <span class="absolute inset-0 bg-black/10 hover:bg-black/12 transition-colors hover:border hover:border-black/10" />
+              {post.data.title}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
   </main>
 </BaseLayout>
