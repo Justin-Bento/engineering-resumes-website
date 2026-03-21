@@ -4,13 +4,17 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 // 1. Generate a new path for every collection entry
 export async function getStaticPaths() {
   const posts = await getCollection("wiki");
-  return posts.map((post) => ({
+  return posts.map((post, index) => ({
     params: { id: post.id },
-    props: { post },
+    props: {
+      post,
+      prevPost: index > 0 ? posts[index - 1] : null,
+      nextPost: index < posts.length - 1 ? posts[index + 1] : null,
+    },
   }));
 }
 // 2. For your template, you can get the entry directly from the prop
-const { post } = Astro.props;
+const { post, prevPost, nextPost } = Astro.props;
 const { Content } = await render(post);
 
 const title = `Wiki - ${post.data.title}`;
@@ -25,6 +29,35 @@ const title = `Wiki - ${post.data.title}`;
         {post.data.title}
       </h1>
       <Content />
+      <div
+        class="mt-12 py-6 border-t border-black/30 flex justify-between items-center [&>div>a]:text-sm"
+      >
+        <div>
+          {
+            prevPost && (
+              <a
+                href={`/wiki/${prevPost.id}`}
+                class="text-blue-600 hover:underline"
+              >
+                ← {prevPost.data.title}
+              </a>
+            )
+          }
+        </div>
+
+        <div>
+          {
+            nextPost && (
+              <a
+                href={`/wiki/${nextPost.id}`}
+                class="text-blue-600 hover:underline"
+              >
+                {nextPost.data.title} →
+              </a>
+            )
+          }
+        </div>
+      </div>
     </section>
   </main>
 </BaseLayout>
