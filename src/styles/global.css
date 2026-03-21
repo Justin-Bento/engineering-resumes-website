@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 @theme {
   --color-*: initial;
@@ -21,9 +22,9 @@
 @layer components {
   .sidebar-links {
     /* Use @apply to tell Tailwind which styles to grab */
-    @apply block first-of-type:mt-3 text-sm/7 text-black/60  transition-colors;
+    @apply block text-sm/7 text-black/60 transition-colors first-of-type:mt-3;
   }
   main {
-    @apply w-11/12 mx-auto max-w-7xl min-h-dvh mt-24;
+    @apply mx-auto mt-24 min-h-dvh w-11/12 max-w-7xl;
   }
 }

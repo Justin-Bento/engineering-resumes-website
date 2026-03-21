@@ -18,17 +18,13 @@ const title = `Wiki - ${post.data.title}`;
 
 <BaseLayout pageTitle={title}>
   <main class="w-11/12 mx-auto max-w-7xl min-h-dvh flex flex-1">
-    <section class="">
-      <h1
-        class="scroll-m-20 text-3xl font-extrabold tracking-tight text-balance"
-      >
+    <section
+      class="prose max-w-[80ch] text-pretty prose-headings:capitalize prose-headings:text-xl text-base/7 text-black"
+    >
+      <h1>
         {post.data.title}
       </h1>
-      <div
-        class="max-w-3xl text-base/7 space-y-4 mt-6 [&>ol]:ml-12 [&>ol]:list-outside [&>ol]:list-decimal [&>p>a]:underline"
-      >
-        <Content />
-      </div>
+      <Content />
     </section>
   </main>
 </BaseLayout>
