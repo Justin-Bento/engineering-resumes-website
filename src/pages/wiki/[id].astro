@@ -2,6 +2,7 @@
 import { getCollection, render } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 // 1. Generate a new path for every collection entry
+const posts = await getCollection("wiki");
 export async function getStaticPaths() {
   const posts = await getCollection("wiki");
   return posts.map((post, index) => ({
@@ -28,6 +29,17 @@ const title = `Wiki - ${post.data.title}`;
       <h1>
         {post.data.title}
       </h1>
+      <ul class="flex flex-wrap list-none group gap-3">
+      {posts.map((post, index) => {
+        return (
+          <li class="group">
+            <a href={`/wiki/${post.id}`} class="bg-gray-2 rounded-full no-underline px-6 py-3 text-sm/7 hover:underline hover:cursor-pointer">
+              {post.data.title}
+            </a>
+          </li>
+        )
+      })}
+      </ul>
       <Content />
       <div
         class="mt-12 py-6 border-t border-black/30 flex justify-between items-center [&>div>a]:text-sm"
