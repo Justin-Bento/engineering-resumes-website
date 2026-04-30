@@ -20,14 +20,10 @@ const title = `Wiki - ${post.data.title}`;
 ---
 
 <BaseLayout pageTitle={title}>
-  <main class="w-11/12 mx-auto max-w-7xl min-h-dvh flex flex-1">
-    <section
-      class="prose max-w-[80ch] text-pretty prose-headings:capitalize prose-headings:text-xl text-base/7 text-black"
-    >
-      <h1>
-        {post.data.title}
-      </h1>
-      <ul class="flex flex-wrap list-none group gap-3">
+  <main class="w-11/12 mx-auto max-w-7xl min-h-dvh">
+    <section>
+      <h1 class="">{post.data.title}</h1>
+      <ul class="flex flex-wrap list-none group gap-3 mt-6">
       {posts.map((post, index) => {
         return (
           <li class="group">
@@ -38,7 +34,9 @@ const title = `Wiki - ${post.data.title}`;
         )
       })}
       </ul>
-      <Content />
     </section>
+    <article class="lg:mt-12 prose max-w-[100ch] text-balance prose-headings:capitalize prose-headings:text-xl/[2] text-base/[2] text-black">
+      <Content />
+    </article>
   </main>
 </BaseLayout>
